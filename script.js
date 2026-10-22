@@ -19,16 +19,6 @@ if(f&&st){f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidit
     var ob=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');en.target.classList.remove('pre');ob.unobserve(en.target);}});},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
     all.forEach(function(el){ob.observe(el);});
   }else{all.forEach(function(el){el.classList.add('is-in');el.classList.remove('pre');});}
-  // count-up prices
-  function countUp(el){var raw=el.textContent,m=raw.match(/[\d,]+/);if(!m)return;var target=parseInt(m[0].replace(/,/g,''),10),pre=raw.slice(0,m.index),post=raw.slice(m.index+m[0].length),t0=null,dur=1300;
-    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur),v=Math.round(target*(1-Math.pow(1-p,3)));el.textContent=pre+v.toLocaleString('ja-JP')+post;if(p<1)requestAnimationFrame(step);else{el.textContent=raw;el.classList.add('done');}}
-    requestAnimationFrame(step);}
-  var nums=document.querySelectorAll('.price strong,.md-price strong,.prow strong,.hero-points b');
-  nums.forEach(function(n){n.classList.add('count');});
-  if(io&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var oc=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var d=en.target.closest('.hero')?1500:0;setTimeout(function(){countUp(en.target);},d);oc.unobserve(en.target);}});},{threshold:.6});
-    nums.forEach(function(n){oc.observe(n);});
-  }
   // header shadow & back-to-top
   var hd=document.querySelector('.site-header'),tt=document.createElement('a');
   tt.href='#top';tt.className='to-top';tt.setAttribute('aria-label','ページの先頭へ');tt.textContent='↑';document.body.appendChild(tt);
