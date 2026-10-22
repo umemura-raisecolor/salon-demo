@@ -202,3 +202,163 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .menu-description p{margin-bottom:10px}
 @media(max-width:1100px){.concept{grid-template-columns:1fr}.menu-inner{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.hero-side-note{display:none}.eyebrow{letter-spacing:.18em}.eyebrow span{flex-wrap:wrap}.eyebrow span:after{width:24px}.menu-inner{grid-template-columns:1fr}.menu-item{grid-template-columns:120px 1fr;gap:16px}.menu-photo{height:110px}}
+
+
+
+/* ===== LUXURY EDITORIAL REDESIGN / 2026 ===== */
+:root{
+  --paper:#f8f5f0;
+  --paper-deep:#eae3d9;
+  --ink:#28231f;
+  --muted:#766c62;
+  --gold:#aa8b62;
+  --gold-light:#d8c09a;
+  --dark:#29231f;
+  --line:rgba(130,105,75,.24);
+  --serif:"Noto Serif JP",serif;
+  --display:"Cormorant Garamond",serif;
+}
+body{background:var(--paper);color:var(--ink);letter-spacing:.035em}
+.demo-bar{background:#e8e0d5;color:#64574a}
+.announcement{height:30px;background:#302923;color:#e9dfd1;font-size:9px;letter-spacing:.19em}
+.site-header{height:86px;background:rgba(248,245,240,.97);border-bottom:1px solid rgba(130,105,75,.18)}
+.brand-mark{color:#a88a63}
+.brand-name{font-size:26px;letter-spacing:.16em}
+.brand-name em{font-size:7px;letter-spacing:.32em;color:#827466}
+.nav{gap:clamp(15px,2vw,32px);font-size:10px;color:#51483f}
+.nav-reserve{border-color:#a88a63;background:#a88a63;color:#fffaf3;padding:12px 19px}
+.nav-reserve:hover{background:#78634a;border-color:#78634a}
+.hero{height:min(760px,calc(100vh - 116px));min-height:590px;background:#c7b6a2}
+.hero-image{background-image:url("assets/face.jpg");background-size:cover;background-position:center 46%;transform:scale(1.015)}
+.hero-shade{background:linear-gradient(90deg,rgba(248,245,240,.99) 0%,rgba(248,245,240,.96) 25%,rgba(248,245,240,.82) 39%,rgba(248,245,240,.28) 57%,rgba(35,27,21,.08) 76%,rgba(35,27,21,.24) 100%)}
+.hero-copy{margin-left:clamp(28px,9vw,150px);max-width:530px;padding:50px 0}
+.eyebrow{color:#9a7a51;font-size:11px;letter-spacing:.34em;margin-bottom:24px}
+.eyebrow span:after{background:#b59a76;width:42px}
+h1{font-size:clamp(42px,4.5vw,68px);line-height:1.48;letter-spacing:.12em;color:#302923;margin-bottom:25px}
+.hero-lead{font-size:13px;line-height:2.35;color:#65594e;letter-spacing:.055em}
+.button{min-width:205px;padding:15px 20px;font-size:10px;letter-spacing:.16em}
+.button-dark{background:#302923;color:#f8f2e9}
+.button-dark:hover{background:#80694f}
+.hero-tags{gap:22px;margin-top:35px;border-left-color:#b59a76;color:#7e7164;font-size:9px}
+.hero-side-note{right:5%;top:17%;color:#fffaf2;text-shadow:0 1px 12px rgba(0,0,0,.3);border-left-color:rgba(255,250,242,.7);letter-spacing:.13em}
+.section-wrap{padding:105px clamp(24px,7vw,120px)}
+.concept{gap:clamp(32px,5vw,84px)}
+.section-intro h2,.salon-copy h2,.menu-heading h2,.reservation h2{line-height:1.7;letter-spacing:.12em}
+.concept-cards{gap:22px}
+.concept-photo{height:clamp(150px,16vw,230px);filter:saturate(.82)}
+.card-caption{padding-top:15px;gap:12px}
+.number{color:#a88a63}
+.card-caption b{font-size:11px;letter-spacing:.04em}
+.card-caption small{font-size:10px;color:#82776c}
+.menu-section{background:#2c2621;color:#f4ede3;padding:68px clamp(24px,7vw,120px) 72px}
+.menu-section:after{opacity:.035}
+.menu-heading h2{font-size:clamp(25px,2.4vw,35px)}
+.menu-photo{height:175px;filter:saturate(.78)}
+.menu-description h3{font-size:15px;letter-spacing:.04em}
+.menu-description p{color:#c8bcae;font-size:12px;line-height:2.1}
+.price strong{color:#e1c69e}
+.button-outline{border:1px solid rgba(218,194,158,.65);color:#f5ede2}
+.button-outline:hover{background:#a88a63;border-color:#a88a63}
+.salon{gap:clamp(35px,7vw,105px);align-items:center}
+.salon-image{min-height:440px;background-position:center;background-size:cover;filter:saturate(.78)}
+.salon-copy>p:not(.eyebrow){font-size:13px;line-height:2.4;color:#6c6157}
+.reservation{background:#2c2621}
+.reservation-bg{opacity:.19}
+.reservation-content{padding:88px 24px}
+.reservation h2{font-size:clamp(32px,3.3vw,46px)}
+.button-gold{background:#b39770;color:#fffaf3}
+.button-gold:hover{background:#d0b58d;color:#29231f}
+.site-footer{background:#211d19;color:#e8dfd3}
+.footer-details{color:#bdb1a3}
+.footer-top{color:#d5b98d}
+.page-hero{background:#e9e1d6}
+.page-hero .ph-shade{background:linear-gradient(90deg,rgba(248,245,240,.97) 0%,rgba(248,245,240,.88) 40%,rgba(248,245,240,.35) 72%,rgba(35,27,21,.08) 100%)}
+.page-hero .eyebrow{color:#9a7a51}
+.page-hero h1{color:#302923}
+.wrap{padding-top:88px;padding-bottom:88px}
+.paper-deep{background:#eee7dd}
+.plist{background:#2c2621}
+.plist .prow.first{background:rgba(179,151,112,.13)}
+.plist .prow strong{color:#e1c69e}
+.form{background:#fffdf9;border-color:rgba(130,105,75,.22);box-shadow:0 18px 50px rgba(65,48,32,.055)}
+.form input,.form select,.form textarea{background:#faf7f2;border-color:#d8cec0}
+.req{background:#9d8058}
+.text-link{border-bottom-color:#b59a76}
+.text-link span{color:#a88a63}
+@media(max-width:900px){
+  .section-wrap{padding:76px 28px}
+  .salon-image{min-height:340px}
+}
+@media(max-width:760px){
+  .announcement{font-size:8px;letter-spacing:.08em;padding:0 8px;text-align:center}
+  .site-header{height:72px;padding:0 20px}
+  .brand{gap:8px}
+  .brand-mark{font-size:31px}
+  .brand-name{font-size:21px}
+  .brand-name small{font-size:14px}
+  .brand-name em{font-size:6px;letter-spacing:.22em}
+  .hero{height:auto;min-height:690px;align-items:flex-end}
+  .hero-image{background-position:62% center}
+  .hero-shade{background:linear-gradient(180deg,rgba(248,245,240,.05) 0%,rgba(248,245,240,.12) 28%,rgba(248,245,240,.82) 52%,rgba(248,245,240,.98) 72%,rgba(248,245,240,1) 100%)}
+  .hero-copy{margin:0;padding:280px 25px 42px;max-width:100%}
+  h1{font-size:clamp(36px,9vw,48px);line-height:1.55;margin-bottom:17px}
+  .hero-lead{font-size:12px;line-height:2.15}
+  .hero-tags{gap:13px;flex-wrap:wrap;margin-top:25px;font-size:8px}
+  .concept-cards{gap:13px}
+  .concept-photo{height:135px}
+  .menu-section{padding-top:55px;padding-bottom:55px}
+  .salon-image{min-height:270px}
+  .reservation-content{padding:66px 22px}
+  .page-hero .ph-shade{background:linear-gradient(180deg,rgba(248,245,240,.3),rgba(248,245,240,.94) 65%,rgba(248,245,240,.99))}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+
+
+/* ===== 2026-10 refinement: readable sizes / soft photo edge / line breaks ===== */
+.announcement{font-size:11px;height:32px}
+.brand-name em{font-size:8px}
+.nav{font-size:13px}
+.nav-reserve{font-size:13px}
+.eyebrow{font-size:13px}
+.hero-lead{font-size:15px;line-height:2.2}
+.button{font-size:13px}
+.hero-tags{font-size:11px}
+.section-intro>p:not(.eyebrow){font-size:15px;line-height:2.15}
+.text-link{font-size:13px}
+.card-caption b{font-size:15px}
+.card-caption small{font-size:13px}
+.menu-heading>p:not(.eyebrow){font-size:14px}
+.menu-description h3{font-size:16px}
+.menu-description p{font-size:14px}
+.price span{font-size:13px}.price strong{font-size:24px}.price small{font-size:11px}
+.button-outline{font-size:13px}
+.salon-copy>p:not(.eyebrow){font-size:15px;line-height:2.25}
+.reservation-content>p:not(.eyebrow){font-size:15px}
+.reservation-content>small{font-size:13px}
+.footer-details{font-size:13px}
+.footer-top{font-size:12px}
+.copyright{font-size:11px}
+.crumb{font-size:13px}
+h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+/* soften the hard left edge of hero photos */
+.hero-image,.page-hero .ph-img{-webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 10%,#000 30%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 10%,#000 30%)}
+@media(max-width:1100px){.nav>a:not(.nav-reserve){font-size:12px}}
+@media(max-width:760px){
+  .announcement{font-size:10px}
+  .nav>a:not(.nav-reserve){font-size:15px}
+  .hero-image,.page-hero .ph-img{-webkit-mask-image:none;mask-image:none}
+  .hero-lead{font-size:14px;line-height:2.1}
+  .hero-tags{font-size:10px}
+  .section-intro>p:not(.eyebrow),.salon-copy>p:not(.eyebrow){font-size:14px}
+  .card-caption b{font-size:15px}.card-caption small{font-size:13px}
+  .menu-description h3{font-size:15px}.menu-description p{font-size:13px}
+  .footer-details{font-size:12px}
+}
+.card-caption{gap:10px;align-items:center}
+.card-caption b{font-size:14px;letter-spacing:.02em;line-height:1.7}
+.card-caption small{font-size:12px;letter-spacing:.01em;white-space:nowrap}
+.card-caption i{flex-shrink:0}
+@media(max-width:760px){.card-caption b{font-size:15px}.card-caption small{font-size:13px}}
