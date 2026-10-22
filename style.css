@@ -345,3 +345,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .page-hero .eyebrow{font-size:30px;right:6px}
 }
 @media(max-width:640px){.page-hero .eyebrow{position:static;transform:none;font-size:14px;letter-spacing:.2em;color:var(--coral);margin:0 0 6px}}
+
+.hero h1,.page-hero h1{word-break:normal;overflow-wrap:normal}
+.hero h1{white-space:nowrap}

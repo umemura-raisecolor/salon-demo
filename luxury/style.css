@@ -362,3 +362,6 @@ h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
 .card-caption small{font-size:12px;letter-spacing:.01em;white-space:nowrap}
 .card-caption i{flex-shrink:0}
 @media(max-width:760px){.card-caption b{font-size:15px}.card-caption small{font-size:13px}}
+
+.hero h1{white-space:nowrap;font-size:clamp(36px,4.1vw,62px)}
+@media(max-width:760px){.hero h1{font-size:clamp(30px,8.6vw,44px)}}
