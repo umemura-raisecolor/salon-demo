@@ -73,7 +73,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;word-break:keep-all;overflow-w
 
 /* HERO (top page) */
 .hero{position:relative;min-height:640px;overflow:hidden;background:#fff}
-.hero-image{position:absolute;left:0;top:0;width:66%;height:560px;background:url("assets/face.jpg") center 42%/cover}
+.hero-image{position:absolute;left:0;top:0;width:66%;height:560px;background:url("assets/hero.jpg") 45% 35%/cover}
 .hero-word{position:absolute;right:-.06em;top:56px;font-family:var(--display);font-size:clamp(70px,10vw,150px);line-height:1;letter-spacing:.06em;color:rgba(198,164,91,.17);white-space:nowrap}
 .hero-sub{position:absolute;right:clamp(20px,4vw,72px);top:clamp(150px,15vw,215px);font-family:var(--display);font-size:16px;letter-spacing:.12em;color:#c9b8a8}
 .hero-copy{position:relative;z-index:2;margin:300px clamp(20px,5vw,96px) 0 auto;width:min(620px,92%);background:#fff;padding:40px 46px 42px;box-shadow:0 18px 50px rgba(120,80,70,.1)}
@@ -99,7 +99,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;word-break:keep-all;overflow-w
 .concept-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(212,103,92,.15)}
 .concept-photo{height:230px;background-size:cover;background-position:center}
 .photo-face{background-image:url("assets/facial.jpg")}
-.photo-body{background-image:url("assets/body.jpg")}
+.photo-body{background-image:url("assets/towels.jpg")}
 .photo-room{background-image:url("assets/room.jpg")}
 .card-caption{display:flex;align-items:center;gap:14px;padding:18px 20px 20px}
 .number{font-family:var(--display);font-size:44px;line-height:1;color:var(--coral)}
@@ -127,13 +127,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;word-break:keep-all;overflow-w
 
 /* salon block (top page) */
 .salon{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,7vw,110px);align-items:center;max-width:1240px;margin:0 auto}
-.salon-image{position:relative;min-height:440px;background:url("assets/room.jpg") center/cover;box-shadow:24px 24px 0 var(--coral-pale)}
+.salon-image{position:relative;min-height:440px;background:url("assets/room.jpg") 60% center/cover;box-shadow:24px 24px 0 var(--coral-pale)}
 .salon-copy{padding-top:40px}
 .salon-copy>p:not(.eyebrow){font-size:16px;color:var(--muted);line-height:2.15;margin-bottom:26px}
 
 /* reservation band */
 .reservation{position:relative;overflow:hidden;background:linear-gradient(120deg,#e9958a,#d9786d);color:#fff;text-align:center}
-.reservation-bg{position:absolute;inset:0;background:url("assets/room.jpg") center/cover;opacity:.12;mix-blend-mode:luminosity}
+.reservation-bg{position:absolute;inset:0;background:url("assets/flowers.jpg") center/cover;opacity:.12;mix-blend-mode:luminosity}
 .reservation-content{position:relative;padding:90px 24px}
 .reservation .eyebrow{color:rgba(255,255,255,.85);font-size:16px}
 .reservation h2{color:#fff}
@@ -214,7 +214,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;word-break:keep-all;overflow-w
 
 .greet{display:grid;grid-template-columns:.9fr 1.1fr;gap:8%;align-items:center}
 .greet>*{min-width:0}
-.greet .g-img{height:460px;background:url("assets/staff.jpg") center 25%/cover;box-shadow:22px 22px 0 var(--coral-pale)}
+.greet .g-img{height:460px;background:url("assets/staff.jpg") 45% 20%/cover;box-shadow:22px 22px 0 var(--coral-pale)}
 .greet .eyebrow{font-size:15px}
 .greet h2{font-size:clamp(26px,2.6vw,34px);line-height:1.65;margin:0 0 20px}
 .greet p{font-size:16px;line-height:2.1;color:var(--muted)}
@@ -237,7 +237,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;word-break:keep-all;overflow-w
 .cblock h3{font-size:20px;margin:4px 0 6px}
 .cblock .tel{display:block;font-family:var(--display);font-size:38px;font-weight:600;color:var(--coral-deep);letter-spacing:.04em}
 .cblock p{font-size:15px;color:var(--muted);margin:4px 0 0;line-height:1.9}
-.online{margin-top:8px;height:230px;background:url("assets/online.jpg") center 30%/cover}
+.online{margin-top:8px;height:230px;background:url("assets/online.jpg") 40% 30%/cover}
 .form{background:#fff;border-top:5px solid var(--coral);box-shadow:0 18px 50px rgba(120,80,70,.09);padding:40px}
 .form h3{font-size:24px;margin:0 0 6px}
 .form .intro{font-size:15px;color:var(--muted);margin-bottom:26px}
