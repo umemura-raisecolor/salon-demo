@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=face1">
+  <link rel="stylesheet" href="style.css?v=full1">
 </head>
-<body>
+<body class="home">
   <div class="demo-bar"><b>制作デモサイト</b>｜合同会社ライズカラーが制作したサンプルです。サロン名・住所・電話番号・料金は架空のものです。</div>
   <div class="announcement">完全予約制のプライベートサロン　—　ご予約はオンライン・お電話にて</div>
   <header class="site-header">
@@ -28,17 +28,20 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero hero-full">
+      <div class="hero-slides" aria-hidden="true"><div class="slide s1"></div><div class="slide s2"></div><div class="slide s3"></div></div>
+      <div class="hero-shade-top" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="petals" aria-hidden="true"><i style="--x:8%;--d:0s;--t:14s;--s:1"></i><i style="--x:22%;--d:3s;--t:17s;--s:0.7"></i><i style="--x:41%;--d:6s;--t:15s;--s:0.9"></i><i style="--x:58%;--d:1.5s;--t:19s;--s:0.6"></i><i style="--x:72%;--d:4.5s;--t:16s;--s:1.1"></i><i style="--x:86%;--d:7s;--t:18s;--s:0.8"></i><i style="--x:95%;--d:2s;--t:15s;--s:0.7"></i></div>
-      <div class="hero-image" role="img" aria-label="フェイシャルトリートメントを受ける女性"></div>
-      <div class="hero-word" aria-hidden="true"><span style="--i:0">L</span><span style="--i:1">U</span><span style="--i:2">M</span><span style="--i:3">I</span><span style="--i:4">È</span><span style="--i:5">R</span><span style="--i:6">E</span></div>
-      <div class="hero-sub" aria-hidden="true">#Facial　#Body　#Aroma　#Private Room</div>
-      <div class="hero-copy">
-        <p class="hero-band">完全予約制の<b>プライベートサロン</b></p>
+      <div class="hero-text">
+        <p class="hero-eyebrow">Private Beauty Salon</p>
         <h1><span class="line"><span>肌と心に、</span></span><span class="line"><span><em>静かな輝き</em>を。</span></span></h1>
-        <ul class="hero-points"><li>完全個室で、おひとりずつ</li><li>初回フェイシャル60分 <b>¥5,500</b></li><li>勧誘・押し売りはしません</li></ul>
-        <div class="hero-actions"><a class="button button-coral" href="contact.html">WEB予約はこちら <span>›</span></a><a class="button" href="menu.html">メニューを見る <span>›</span></a></div>
+        <p class="hero-lead">扉を開けた瞬間から、心がほどけていくような場所でありたい。<br class="desktop">完全予約制の個室で、あなただけの特別な時間をお届けします。</p>
+        <ul class="hero-chips"><li>完全個室</li><li>初回フェイシャル60分 ¥5,500</li><li>勧誘なし</li></ul>
+        <div class="hero-actions"><a class="button button-coral" href="contact.html">WEB予約はこちら <span>›</span></a><a class="button button-glass" href="menu.html">メニューを見る <span>›</span></a></div>
       </div>
+      <div class="hero-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <a class="hero-scroll" href="#concept"><span>Scroll</span><i></i></a>
     </section>
 
     <section class="concept section-wrap" id="concept">
@@ -114,6 +117,6 @@
     <a class="footer-top" href="#top">BACK TO TOP ↑</a>
     <div class="copyright">© LUMIÈRE beauté. All Rights Reserved.</div>
   </footer>
-  <script src="script.js?v=nocount"></script>
+  <script src="script.js?v=full1"></script>
 </body>
 </html>

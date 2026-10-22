@@ -25,3 +25,4 @@ if(f&&st){f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidit
   function onScroll(){var y=window.scrollY;if(hd)hd.classList.toggle('is-scrolled',y>40);tt.classList.toggle('show',y>600);}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
 })();
+(function(){var h=document.querySelector('.site-header');if(!h||!document.body.classList.contains('home'))return;function set(){document.documentElement.style.setProperty('--hh',h.offsetHeight+'px');}set();window.addEventListener('resize',set);})();
