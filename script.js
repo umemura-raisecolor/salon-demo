@@ -1,7 +1,17 @@
-if('scrollRestoration' in history)history.scrollRestoration='manual';
-(function(){const top=()=>{if(!location.hash){window.scrollTo(0,0);document.documentElement.scrollTop=0;document.body.scrollTop=0;}};top();window.addEventListener('load',top);window.addEventListener('pageshow',top);})();
-const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');
-if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('is-open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');});}
-const f=document.getElementById('contact-form'),st=document.getElementById('form-status');
-if(f&&st){f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidity())return;st.textContent='デモサイトのため、送信はされません。実際のサイトでは、このあとご予約確認のご連絡が届きます。';});}
-(function(){const els=document.querySelectorAll('.concept-card,.menu-item,.mdetail,.step,.prep>div,.greet,.gallery figure,.salon,.prow');if(!('IntersectionObserver' in window))return;els.forEach(e=>e.classList.add('fade'));const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}})},{threshold:.12});els.forEach(e=>io.observe(e));})();
+(function(){
+  var btn=document.querySelector('.sun-btn'),drawer=document.getElementById('drawer');
+  if(btn&&drawer){
+    function set(open){drawer.classList.toggle('is-open',open);drawer.setAttribute('aria-hidden',String(!open));btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');document.body.style.overflow=open?'hidden':'';}
+    btn.addEventListener('click',function(){set(!drawer.classList.contains('is-open'));});
+    drawer.addEventListener('click',function(e){if(e.target===drawer||e.target.closest('a'))set(false);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  }
+  var f=document.getElementById('contact-form'),st=document.getElementById('form-status');
+  if(f&&st){f.addEventListener('submit',function(e){e.preventDefault();if(!f.reportValidity())return;st.textContent='デモサイトのため、送信はされません。実際のサイトでは、このあとご予約確認のご連絡が届きます。';});}
+  if('IntersectionObserver' in window){
+    var els=document.querySelectorAll('.circles li,.menu-cards li,.zig,.steps li,.prep li,.gallery figure,.split,.price-card,.faq details');
+    els.forEach(function(e){e.classList.add('fade');});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is-in');io.unobserve(en.target);}});},{threshold:.1});
+    els.forEach(function(e){io.observe(e);});
+  }
+})();
