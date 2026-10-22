@@ -3,108 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fdf7ee">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="LUMIÈRE beautéのオーナーあいさつ、サロンの様子、アクセスのご案内。">
   <title>サロンについて｜LUMIÈRE beauté</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Yomogi&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=sunny1">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=anim1">
 </head>
 <body>
   <div class="demo-bar"><b>制作デモサイト</b>｜合同会社ライズカラーが制作したサンプルです。サロン名・住所・電話番号・料金は架空のものです。</div>
+  <div class="announcement">完全予約制のプライベートサロン　—　ご予約はオンライン・お電話にて</div>
   <header class="site-header">
-    <a class="logo" href="index.html" aria-label="LUMIÈRE beauté ホーム"><small>完全予約制のプライベートサロン</small><span class="logo-box">ルミエール<br>ボーテ</span></a>
-    <nav class="pc-nav" aria-label="メインメニュー"><a href="concept.html">コンセプト</a><a href="menu.html">メニュー・料金</a><a href="first.html">初めての方へ</a><a href="salon.html" aria-current="page">サロンについて</a></nav>
-    <button class="sun-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 120 120" aria-hidden="true"><g stroke="#3d3a36" stroke-width="1.6" stroke-linecap="round">
-<line x1="60" y1="6" x2="60" y2="20"/><line x1="60" y1="100" x2="60" y2="114"/><line x1="6" y1="60" x2="20" y2="60"/><line x1="100" y1="60" x2="114" y2="60"/>
-<line x1="22" y1="22" x2="32" y2="32"/><line x1="88" y1="88" x2="98" y2="98"/><line x1="98" y1="22" x2="88" y2="32"/><line x1="22" y1="98" x2="32" y2="88"/>
-<line x1="38" y1="10" x2="42" y2="22"/><line x1="82" y1="10" x2="78" y2="22"/><line x1="38" y1="110" x2="42" y2="98"/><line x1="82" y1="110" x2="78" y2="98"/>
-<line x1="10" y1="38" x2="22" y2="42"/><line x1="10" y1="82" x2="22" y2="78"/><line x1="110" y1="38" x2="98" y2="42"/><line x1="110" y1="82" x2="98" y2="78"/></g>
-<circle cx="60" cy="60" r="33" fill="#f7d873" stroke="#3d3a36" stroke-width="1.6"/></svg><span class="bars"><i></i><i></i><i></i></span></button>
-  </header>
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer-inner">
-      <p class="drawer-title">Menu</p>
-      <ul><li><a href="index.html"><span class="en">Home</span>ホーム</a></li><li><a href="concept.html"><span class="en">Concept</span>コンセプト</a></li><li><a href="menu.html"><span class="en">Menu</span>メニュー・料金</a></li><li><a href="first.html"><span class="en">First visit</span>初めての方へ</a></li><li><a href="salon.html" aria-current="page"><span class="en">Salon</span>サロンについて</a></li><li><a href="contact.html"><span class="en">Reservation</span>ご予約・お問い合わせ</a></li></ul>
-      <a class="btn btn-yellow" href="tel:0000000000">お電話 00-0000-0000</a>
-      <span class="drawer-cloud"><svg viewBox="0 0 160 90" aria-hidden="true"><path d="M30 78 C10 78 6 56 22 50 C18 30 44 22 54 36 C60 14 96 12 102 34 C116 26 136 36 130 54 C150 56 150 78 130 78 Z" fill="#fff" stroke="#3d3a36" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+    <a class="brand" href="index.html" aria-label="LUMIÈRE beauté ホーム"><span class="brand-mark" aria-hidden="true">✧</span><span class="brand-name">LUMIÈRE <small>beauté</small><em>PRIVATE BEAUTY SALON</em></span></a>
+    <div class="header-right">
+      <div class="header-util">
+        <a class="h-tel" href="tel:0000000000"><b>☎ 00-0000-0000</b><small>受付 10:00–19:00／不定休</small></a>
+        <a class="h-btn h-btn-gold" href="first.html">初めての方へ</a>
+        <a class="h-btn h-btn-coral" href="contact.html">WEB予約</a>
+      </div>
+      <nav class="nav" aria-label="メインメニュー"><a href="index.html">ホーム<span>HOME</span></a><a href="concept.html">コンセプト<span>CONCEPT</span></a><a href="menu.html">メニュー・料金<span>MENU</span></a><a href="first.html">初めての方へ<span>FIRST VISIT</span></a><a href="salon.html" aria-current="page">サロンについて<span>SALON</span></a><a class="nav-reserve" href="contact.html">ご予約<span>RESERVE</span></a></nav>
     </div>
-  </div>
-  <main id="top">
+    <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+  </header>
+<main id="top">
     <section class="page-hero">
-      <div class="ph-text">
-        <h1 class="hand-title"><span class="hand">The Salon</span><span class="ja">サロンについて</span></h1>
-        <p>日常から離れて、自分を慈しむひととき。サロンのこと、わたしたちのことをご紹介します。</p>
-      </div>
-      <div class="ph-photo"><div class="blob" style="background-image:url('assets/room.jpg');background-position:center 60%"></div><span class="doodle d-ph1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3Z" fill="#f7d873" stroke="#3d3a36" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="doodle d-ph2"><svg viewBox="0 0 160 90" aria-hidden="true"><path d="M30 78 C10 78 6 56 22 50 C18 30 44 22 54 36 C60 14 96 12 102 34 C116 26 136 36 130 54 C150 56 150 78 130 78 Z" fill="#fff" stroke="#3d3a36" stroke-width="1.6" stroke-linejoin="round"/></svg></span></div>
-      <div class="wave "><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,6 480,6 720,46 C960,86 1200,92 1440,40 L1440,120 L0,120 Z" fill="#8ed9ee"/></svg></div>
-    </section>
-    <section class="sec sec-aqua">
-      <div class="inner split">
-        <div class="split-photo"><div class="blob" style="background-image:url('assets/staff.jpg');background-position:center 25%"></div><span class="doodle d-flower2"><svg viewBox="0 0 60 60" aria-hidden="true"><g fill="#f7d873" stroke="#3d3a36" stroke-width="1.4">
-<circle cx="30" cy="15" r="10"/><circle cx="44" cy="25" r="10"/><circle cx="39" cy="42" r="10"/><circle cx="21" cy="42" r="10"/><circle cx="16" cy="25" r="10"/></g>
-<circle cx="30" cy="30" r="7" fill="#f7d873" stroke="#3d3a36" stroke-width="1.4"/></svg></span></div>
-        <div class="card">
-          <h2 class="hand-title"><span class="hand">Message</span><span class="ja">「また来たい」と思える場所に</span></h2>
-          <p>はじめまして。オーナーセラピストの〇〇です。毎日がんばっている女性が、肩の力を抜いて、自分のためだけに過ごせる時間をつくりたい。そんな想いで、このサロンをはじめました。</p>
-          <p>肌のことも、心のことも、どんな小さなお悩みでも聞かせてください。あなたらしい美しさを、一緒に育てていけたらうれしいです。</p>
-          <p class="sign">オーナーセラピスト <b>〇〇 〇〇</b></p>
-        </div>
-      </div>
-      <div class="wave "><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,6 480,6 720,46 C960,86 1200,92 1440,40 L1440,120 L0,120 Z" fill="#ffffff"/></svg></div>
-    </section>
-    <section class="sec sec-white">
-      <div class="inner">
-        <h2 class="hand-title"><span class="hand">Inside</span><span class="ja">サロンのご紹介</span></h2>
-        <p class="sec-lead">やわらかな光が入る、白を基調にした個室です。</p>
-        <div class="gallery">
-          <figure><div class="g" style="background-image:url('assets/room.jpg');background-position:center 60%"></div><figcaption>完全個室のトリートメントルーム。季節のお花でお迎えします。</figcaption></figure>
-          <figure><div class="g" style="background-image:url('assets/aroma.jpg')"></div><figcaption>香りや照明にもこだわって、くつろげる空間を整えています。</figcaption></figure>
-        </div>
-      </div>
-      <div class="wave "><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,6 480,6 720,46 C960,86 1200,92 1440,40 L1440,120 L0,120 Z" fill="#f7d873"/></svg></div>
-    </section>
-    <section class="sec sec-yellow">
-      <div class="inner">
-        <h2 class="hand-title"><span class="hand">Access</span><span class="ja">サロン情報・アクセス</span></h2>
-        <div class="access">
-          <div class="card"><table class="itable"><tbody>
-            <tr><th>サロン名</th><td>LUMIÈRE beauté（ルミエール ボーテ）</td></tr>
-            <tr><th>住所</th><td>〒000-0000<br>〇〇県〇〇市〇〇町1-2-3 〇〇ビル2F</td></tr>
-            <tr><th>最寄り駅</th><td>〇〇駅 南口から徒歩4分</td></tr>
-            <tr><th>営業時間</th><td>10:00–19:00（最終受付17:00）</td></tr>
-            <tr><th>定休日</th><td>不定休</td></tr>
-            <tr><th>電話</th><td>00-0000-0000</td></tr>
-          </tbody></table></div>
-          <figure class="front-fig"><div class="front" role="img" aria-label="サロンの外観"></div><figcaption>木の扉とグリーンが目印です。</figcaption></figure>
-        </div>
+      <div class="ph-img" style="background-image:url('assets/room.jpg');background-position:center 60%"></div>
+      <div class="ph-shade"></div>
+      <div class="ph-copy">
+        <div class="crumb"><a href="index.html">HOME</a>　/　サロンについて</div>
+        <p class="eyebrow"><span>THE SALON</span></p>
+        <h1>日常から離れて、<br>自分を慈しむ<br>ひととき。</h1>
+        <p class="lead">扉を開けた瞬間から、心がほどけていくような場所でありたい。サロンのこと、私たちのことをご紹介します。</p>
       </div>
     </section>
-    <section class="reserve">
-      <div class="wave wave-up"><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,6 480,6 720,46 C960,86 1200,92 1440,40 L1440,120 L0,120 Z" fill="#8ed9ee"/></svg></div>
-      <div class="reserve-inner">
-        <span class="doodle d-spark1"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3Z" fill="#f7d873" stroke="#3d3a36" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="doodle d-spark2"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 C21 14 26 19 37 20 C26 21 21 26 20 37 C19 26 14 21 3 20 C14 19 19 14 20 3Z" fill="#f5a9b8" stroke="#3d3a36" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
-        <h2 class="hand-title light"><span class="hand">Reservation</span><span class="ja">ご予約</span></h2>
-        <p>初めての方も、どうぞお気軽に。<br>WEBなら24時間受け付けています。</p>
-        <div class="btn-row"><a class="btn btn-white" href="contact.html">WEBで予約する <b>›</b></a><a class="btn btn-yellow" href="tel:0000000000">電話 00-0000-0000</a></div>
-        <small>受付 10:00–19:00 ／ 最終受付 17:00 ／ 不定休</small>
+    <section class="wrap"><div class="inner greet">
+      <div class="g-img" role="img" aria-label="オーナーセラピスト"></div>
+      <div>
+        <p class="eyebrow"><span>MESSAGE</span></p>
+        <h2>「また来たい」と思える<br>場所でありたい。</h2>
+        <p>はじめまして。オーナーセラピストの〇〇です。毎日がんばっている女性が、肩の力を抜いて、自分のためだけに過ごせる時間をつくりたい。そんな想いで、このサロンをはじめました。</p>
+        <p>肌のことも、心のことも、どんな小さなお悩みでも聞かせてください。あなたらしい美しさを、一緒に育てていけたらうれしいです。</p>
+        <div class="sign">オーナーセラピスト<b>〇〇 〇〇</b></div>
       </div>
-      <div class="wave "><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0,64 C240,6 480,6 720,46 C960,86 1200,92 1440,40 L1440,120 L0,120 Z" fill="#fdf7ee"/></svg></div>
+    </div></section>
+    <section class="wrap paper-deep"><div class="inner">
+      <div class="sec-head"><div><p class="eyebrow"><span>INSIDE</span></p><h2>サロンのご紹介</h2></div><p>やわらかな光が入る、<br>白を基調にした個室です。</p></div>
+      <div class="gallery">
+        <figure><div class="gi" style="background-image:url('assets/room.jpg');background-position:center 60%"></div><figcaption>完全個室のトリートメントルーム。季節のお花でお迎えします。</figcaption></figure>
+        <figure><div class="gi" style="background-image:url('assets/aroma.jpg')"></div><figcaption>香りや照明にもこだわり、くつろげる空間を整えています。</figcaption></figure>
+      </div>
+    </div></section>
+    <section class="wrap"><div class="inner">
+      <div class="sec-head"><div><p class="eyebrow"><span>ACCESS</span></p><h2>サロン情報・アクセス</h2></div></div>
+      <div class="info">
+        <table class="itable"><tbody>
+          <tr><th>NAME</th><td>LUMIÈRE beauté</td></tr>
+          <tr><th>ADDRESS</th><td>〒000-0000<br>〇〇県〇〇市〇〇町1-2-3 〇〇ビル2F</td></tr>
+          <tr><th>STATION</th><td>〇〇駅 南口から徒歩4分</td></tr>
+          <tr><th>OPEN</th><td>10:00–19:00（最終受付17:00）</td></tr>
+          <tr><th>CLOSED</th><td>不定休</td></tr>
+          <tr><th>TEL</th><td>00-0000-0000</td></tr>
+        </tbody></table>
+        <figure style="margin:0"><div class="front" role="img" aria-label="サロンの外観"></div><figcaption style="font-size:13px;color:var(--muted);margin-top:10px">木の扉とグリーンが目印です。</figcaption></figure>
+      </div>
+    </div></section>
+    <section class="reservation" id="reserve">
+      <div class="reservation-bg"></div>
+      <div class="reservation-content">
+        <p class="eyebrow"><span>RESERVATION</span></p>
+        <h2>あなたのための、<br>特別な時間を。</h2>
+        <p>初めてのお客様も、どうぞお気軽にご相談ください。</p>
+        <a class="button button-gold" href="contact.html">ご予約・お問い合わせ <span>↗</span></a>
+        <small>受付時間 10:00–19:00 ／ 最終受付 17:00</small>
+      </div>
     </section>
   </main>
   <footer class="site-footer">
-    <div class="foot-inner">
-      <a class="logo" href="index.html"><small>完全予約制のプライベートサロン</small><span class="logo-box">ルミエール<br>ボーテ</span></a>
-      <div class="foot-info"><p>〒000-0000 〇〇県〇〇市〇〇町1-2-3 〇〇ビル2F</p><p>営業時間 10:00–19:00（最終受付17:00）／ 不定休</p><p>TEL 00-0000-0000</p></div>
-      <ul class="foot-nav"><li><a href="index.html">ホーム</a></li><li><a href="concept.html">コンセプト</a></li><li><a href="menu.html">メニュー・料金</a></li><li><a href="first.html">初めての方へ</a></li><li><a href="salon.html">サロンについて</a></li><li><a href="contact.html">ご予約・お問い合わせ</a></li></ul>
-    </div>
-    <span class="foot-flower"><svg viewBox="0 0 60 60" aria-hidden="true"><g fill="#f5a9b8" stroke="#3d3a36" stroke-width="1.4">
-<circle cx="30" cy="15" r="10"/><circle cx="44" cy="25" r="10"/><circle cx="39" cy="42" r="10"/><circle cx="21" cy="42" r="10"/><circle cx="16" cy="25" r="10"/></g>
-<circle cx="30" cy="30" r="7" fill="#f7d873" stroke="#3d3a36" stroke-width="1.4"/></svg></span>
-    <p class="copyright">© LUMIÈRE beauté</p>
+    <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">✧</span><span class="brand-name">LUMIÈRE <small>beauté</small><em>PRIVATE BEAUTY SALON</em></span></a>
+    <div class="footer-details"><p>〒000-0000 〇〇県〇〇市〇〇町1-2-3 〇〇ビル2F</p><p>営業時間 10:00–19:00（最終受付17:00）　／　定休日：不定休</p><p>TEL 00-0000-0000</p></div>
+    <a class="footer-top" href="#top">BACK TO TOP ↑</a>
+    <div class="copyright">© LUMIÈRE beauté. All Rights Reserved.</div>
   </footer>
-  <a class="float-reserve" href="contact.html"><span>WEB<br>予約</span></a>
-  <script src="script.js?v=sunny1"></script>
+  <script src="script.js?v=anim1"></script>
 </body>
 </html>
