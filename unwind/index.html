@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2f2522">
+<meta name="description" content="LUMIÈREは、肌と心をほどく完全予約制のプライベートビューティーサロンです。">
+<title>LUMIÈRE｜Private Beauty Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f8f4ef;--paper:#fffdfa;--greige:#ece4da;--ink:#2f2522;--text:#4f413c;--muted:#8c7d76;--gold:#b89a6a;--rose:#b98275;--line:rgba(47,37,34,.13);
+--serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif CJK JP","Noto Serif JP",serif;--en:"Cormorant Garamond",serif;--sans:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans CJK JP",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--text);font-family:var(--sans);font-size:15.5px;line-height:2;letter-spacing:.05em;overflow-x:hidden}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}ul,ol{list-style:none}
+
+.demo-bar{position:relative;z-index:60;background:var(--ink);color:#e9ddd2;font-size:12px;text-align:center;padding:6px 14px}
+.demo-bar b{color:#dcc39a;font-weight:500}
+
+/* header */
+.hd{position:fixed;left:0;right:0;top:30px;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:24px 5vw;color:#fff;transition:.45s}
+.hd.on{top:0;padding:14px 5vw;background:rgba(248,244,239,.86);color:var(--ink);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.logo{font-family:var(--en);font-size:28px;font-weight:500;letter-spacing:.32em;line-height:1}
+.logo small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.42em;margin-top:6px;opacity:.8}
+.nav{display:flex;align-items:center;gap:34px;font-family:var(--en);font-size:15px;letter-spacing:.22em}
+.nav a.t{position:relative}
+.nav a.t:after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s}
+.nav a.t:hover:after{transform:scaleX(1);transform-origin:left}
+
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:18px 38px;font-size:14.5px;letter-spacing:.14em;overflow:hidden;isolation:isolate;transition:background .35s,color .35s}
+.btn:before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-22deg);animation:shine 4.5s ease-in-out infinite;z-index:-1}
+.btn .ar{font-family:var(--en);font-size:18px;transition:transform .3s}.btn:hover .ar{transform:translateX(5px)}
+.btn-glass{border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.14);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-glass:hover{background:#fff;color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{background:var(--rose)}
+.btn-line{background:#06c755;color:#fff}
+.btn-out{border:1px solid var(--ink);color:var(--ink)}
+.btn-out:before{background:linear-gradient(100deg,transparent,rgba(185,130,117,.25),transparent)}
+.btn-out:hover{background:var(--ink);color:#fff}
+.nav .btn{padding:11px 26px;font-family:var(--sans);font-size:13px}
+.hd:not(.on) .nav .btn{border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.12)}
+.hd.on .nav .btn{background:var(--ink);color:#fff}
+@keyframes shine{0%,55%{left:-60%}85%,100%{left:130%}}
+
+/* ===== HERO ===== */
+.hero{position:relative;height:max(680px,calc(100svh - 30px));overflow:hidden;color:#fff;background:#3a2c27}
+.sl{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.16);transition:opacity 2s ease,transform 9s linear}
+.sl.on{opacity:1;transform:scale(1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,26,22,.32) 0%,rgba(40,26,22,.08) 45%,rgba(40,26,22,.5) 100%),linear-gradient(0deg,rgba(40,26,22,.45),transparent 40%);z-index:1}
+.vcopy{position:absolute;z-index:3;right:8vw;top:17vh;display:flex;flex-direction:row-reverse;gap:34px}
+.vcopy h1{writing-mode:vertical-rl;font-family:var(--serif);font-weight:500;font-size:clamp(40px,4vw,60px);line-height:1.75;letter-spacing:.24em;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.vcopy h1 .ln{display:block;overflow:hidden}
+.vcopy h1 .ln>span{display:inline-block;transform:translateY(-105%);animation:mask 1.6s cubic-bezier(.2,.8,.2,1) forwards}
+.vcopy h1 .ln:nth-child(2)>span{animation-delay:.35s}
+.vcopy p{writing-mode:vertical-rl;font-size:14px;letter-spacing:.45em;padding-top:8px;opacity:0;animation:fade 1.4s 1.2s forwards;border-right:1px solid rgba(255,255,255,.5);padding-right:16px;height:fit-content}
+.en-big{position:absolute;z-index:3;left:5vw;bottom:8vh}
+.en-big small{display:block;font-family:var(--en);font-style:italic;font-size:21px;letter-spacing:.22em;opacity:0;animation:fade 1.4s .9s forwards}
+.en-big b{display:block;font-family:var(--en);font-style:italic;font-weight:400;font-size:clamp(84px,10vw,150px);line-height:1;letter-spacing:-.005em}
+.en-big b span{display:inline-block;opacity:0;transform:translateY(.35em);filter:blur(8px);animation:ch 1.2s cubic-bezier(.2,.8,.2,1) forwards}
+.hero-side{position:absolute;z-index:3;right:8vw;bottom:8vh;display:flex;align-items:stretch;gap:0;opacity:0;animation:up 1.2s 1.8s cubic-bezier(.2,.8,.2,1) forwards}
+.offer-chip{display:flex;flex-direction:column;justify-content:center;padding:12px 26px;border:1px solid rgba(255,255,255,.85);border-right:0;background:rgba(40,26,22,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);line-height:1.3}
+.offer-chip small{font-size:11px;letter-spacing:.14em;opacity:.9}
+.offer-chip b{font-family:var(--en);font-weight:500;font-size:30px}
+.offer-chip b em{font-style:normal;font-family:var(--sans);font-size:11px;margin-left:6px}
+.prog{position:absolute;z-index:3;left:5vw;top:50%;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--en);font-size:14px;transform:translateY(-50%)}
+.prog .bar{width:1px;height:90px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.prog .bar i{position:absolute;inset:0;background:#fff;transform-origin:top;transform:scaleY(0)}
+.prog .bar i.run{animation:pg 6s linear forwards}
+.scroll{position:absolute;z-index:3;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--en);font-size:12px;letter-spacing:.3em;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll i{width:1px;height:44px;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+.scroll i:after{content:"";position:absolute;left:0;top:-100%;width:1px;height:100%;background:#fff;animation:drop 2.2s ease-in-out infinite}
+@keyframes drop{to{top:100%}}
+@keyframes pg{to{transform:scaleY(1)}}
+@keyframes mask{to{transform:none}}
+@keyframes fade{to{opacity:1}}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes ch{to{opacity:1;transform:none;filter:none}}
+
+/* common */
+.sec{padding:140px 7vw;position:relative}
+.head{margin-bottom:64px}
+.head .en{display:block;font-family:var(--en);font-style:italic;font-size:clamp(46px,5vw,76px);line-height:1;color:var(--ink);font-weight:400}
+.head .ja{display:block;margin-top:14px;font-size:13px;letter-spacing:.3em;color:var(--rose)}
+.head.c{text-align:center}
+h2.jp{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,38px);line-height:1.7;letter-spacing:.12em;color:var(--ink)}
+.rv{opacity:0;transform:translateY(44px);transition:opacity 1.2s cubic-bezier(.2,.8,.2,1),transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+.mask{position:relative;overflow:hidden}
+.mask:after{content:"";position:absolute;inset:0;background:var(--greige);transform-origin:right;transition:transform 1.3s cubic-bezier(.7,0,.2,1)}
+.mask.in:after{transform:scaleX(0)}
+.mask img{transform:scale(1.15);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.mask.in img{transform:none}
+
+/* concept: magazine */
+.concept{display:grid;grid-template-columns:1fr 1fr;gap:6vw;max-width:1280px;margin:0 auto;align-items:center}
+.concept .ph{position:relative;height:700px}
+.concept .p1{position:absolute;left:0;top:0;width:72%;height:86%}
+.concept .p2{position:absolute;right:0;bottom:0;width:44%;height:46%;border:10px solid var(--ivory)}
+.concept .ph img{width:100%;height:100%;object-fit:cover}
+.concept .vt{position:absolute;right:6%;top:0;writing-mode:vertical-rl;font-family:var(--serif);font-size:19px;letter-spacing:.55em;color:var(--ink)}
+.concept p.t{margin-top:28px;color:var(--text)}
+.concept p.t+p.t{margin-top:16px}
+
+/* numbers band */
+.nums{background:var(--ink);color:#fff;padding:90px 7vw}
+.nums ul{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto}
+.nums li{text-align:center;padding:0 10px}
+.nums li+li{border-left:1px solid rgba(255,255,255,.18)}
+.nums b{display:block;font-family:var(--en);font-weight:400;font-size:clamp(52px,5.6vw,84px);line-height:1;color:#f1e3d3}
+.nums b sup{font-size:.4em;margin-left:4px}
+.nums small{font-size:13px;letter-spacing:.14em;opacity:.8}
+
+/* worries */
+.worry{background:var(--greige)}
+.wlist{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
+.wlist li{padding:24px 0 24px 46px;border-bottom:1px solid var(--line);position:relative;font-size:16px;color:var(--ink)}
+.wlist li:before{content:"";position:absolute;left:0;top:50%;width:26px;height:26px;margin-top:-13px;border:1px solid var(--rose);border-radius:50%}
+.wlist li:after{content:"";position:absolute;left:9px;top:50%;width:8px;height:13px;margin-top:-9px;border-right:1.5px solid var(--rose);border-bottom:1.5px solid var(--rose);transform:rotate(45deg)}
+.answer{text-align:center;margin-top:70px}
+.answer:before{content:"";display:block;width:1px;height:70px;background:var(--rose);margin:0 auto 30px}
+
+/* menu */
+.menu{max-width:1240px;margin:0 auto}
+.mitem{display:grid;grid-template-columns:1.15fr 1fr;gap:6vw;align-items:center;margin-bottom:110px}
+.mitem:nth-child(even) .ph{order:2}
+.mitem:last-child{margin-bottom:0}
+.mitem .ph{aspect-ratio:5/4}
+.mitem .ph img{width:100%;height:100%;object-fit:cover}
+.mitem .no{font-family:var(--en);font-style:italic;font-size:22px;color:var(--rose)}
+.mitem h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.3vw,32px);letter-spacing:.1em;color:var(--ink);margin:4px 0 18px;line-height:1.6}
+.mitem .tag{display:inline-block;font-size:11.5px;letter-spacing:.2em;background:var(--ink);color:#fff;padding:3px 14px;margin-left:12px;vertical-align:middle}
+.prices{margin-top:26px;border-top:1px solid var(--line)}
+.prices div{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.prices span{font-size:14px}
+.prices b{font-family:var(--en);font-weight:500;font-size:28px;color:var(--ink)}
+.prices b small{font-family:var(--sans);font-size:11px;color:var(--muted);margin-left:4px}
+
+/* offer */
+.offer{position:relative;min-height:620px;display:flex;align-items:center;justify-content:flex-end;padding:100px 8vw;color:#fff;overflow:hidden}
+.offer .bg{position:absolute;inset:-12% 0;background:url(../assets/room.jpg) center/cover}
+.offer:before{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(40,26,22,.7) 30%,rgba(40,26,22,.1));z-index:1}
+.ocard{position:relative;z-index:2;max-width:520px}
+.ocard .en{font-family:var(--en);font-style:italic;font-size:clamp(44px,4.6vw,68px);line-height:1}
+.ocard h2{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.14em;margin:20px 0 26px;line-height:1.7}
+.oprice{display:flex;align-items:flex-end;gap:20px;padding:22px 0;border-top:1px solid rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.4);margin-bottom:26px}
+.oprice s{font-size:14px;opacity:.75;margin-bottom:10px}
+.oprice b{font-family:var(--en);font-weight:400;font-size:74px;line-height:.9}
+.oprice b small{font-family:var(--sans);font-size:13px;margin-left:6px}
+.ocard p{font-size:14px;opacity:.92;margin-bottom:30px}
+
+/* reasons */
+.rlist{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+.rlist .ph{aspect-ratio:3/4;margin-bottom:28px}
+.rlist .ph img{width:100%;height:100%;object-fit:cover}
+.rlist li:nth-child(2){margin-top:70px}
+.rlist .no{font-family:var(--en);font-style:italic;font-size:19px;color:var(--rose)}
+.rlist h3{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.1em;color:var(--ink);margin:4px 0 12px;line-height:1.6}
+.rlist p{font-size:14.5px}
+
+/* voice */
+.voice{background:var(--greige)}
+.vlist{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.vlist li{background:var(--paper);padding:44px 36px 38px;position:relative}
+.vlist li:before{content:"“";position:absolute;left:30px;top:10px;font-family:var(--en);font-size:90px;line-height:1;color:var(--gold);opacity:.55}
+.vlist h3{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.7;color:var(--ink);margin:30px 0 14px}
+.vlist p{font-size:14px}
+.vlist .who{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);letter-spacing:.14em}
+.stars{color:var(--gold);letter-spacing:.24em;font-size:13px}
+
+/* staff */
+.staff{display:grid;grid-template-columns:1fr 1.1fr;gap:7vw;max-width:1180px;margin:0 auto;align-items:center}
+.staff .ph{aspect-ratio:4/5}
+.staff .ph img{width:100%;height:100%;object-fit:cover}
+.staff p.t{margin-top:22px}
+.sign{margin-top:34px;font-family:var(--en);font-style:italic;font-size:36px;color:var(--ink);line-height:1.2}
+.sign small{display:block;font-family:var(--sans);font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.14em;margin-top:6px}
+
+/* flow */
+.flow{background:var(--paper)}
+.flist{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.flist li{padding:40px 28px 10px;border-right:1px solid var(--line)}
+.flist li:first-child{border-left:1px solid var(--line)}
+.flist .no{font-family:var(--en);font-style:italic;font-size:54px;line-height:1;color:var(--greige);-webkit-text-stroke:1px var(--rose)}
+.flist h3{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--ink);margin:16px 0 8px}
+.flist p{font-size:13.5px;line-height:1.9}
+
+/* access */
+.access{display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;max-width:1200px;margin:0 auto;align-items:center}
+.access .ph{aspect-ratio:4/3}
+.access .ph img{width:100%;height:100%;object-fit:cover}
+.info{width:100%;border-collapse:collapse;font-size:14.5px}
+.info th,.info td{padding:17px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.info tr:first-child th,.info tr:first-child td{border-top:1px solid var(--line)}
+.info th{width:7.5em;font-weight:500;color:var(--ink);font-family:var(--serif)}
+
+/* reserve */
+.reserve{position:relative;padding:150px 7vw;text-align:center;color:#fff;overflow:hidden}
+.reserve .bg{position:absolute;inset:0;background:url(../assets/aroma2.jpg) center/cover;transform:scale(1.05)}
+.reserve:before{content:"";position:absolute;inset:0;background:rgba(40,26,22,.6);z-index:1}
+.reserve>*:not(.bg){position:relative;z-index:2}
+.reserve .en{font-family:var(--en);font-style:italic;font-size:clamp(60px,8vw,120px);line-height:1}
+.reserve h2{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2vw,26px);letter-spacing:.16em;margin:22px 0 12px}
+.reserve p{font-size:14px;opacity:.9;margin-bottom:40px}
+.ract{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
+.ract .btn{min-width:260px}
+.rtel{display:block;margin-top:34px;font-family:var(--en);font-size:38px;letter-spacing:.1em;line-height:1.2}
+.rtel small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.1em;opacity:.8}
+
+footer{background:var(--ink);color:#d9cbc1;text-align:center;padding:56px 7vw 60px;font-size:12px}
+footer .logo{color:#fff;margin-bottom:22px;display:inline-block}
+footer a{color:#dcc39a}
+.spbar{display:none}
+
+/* ===== responsive ===== */
+@media (max-width:1100px){.nav a.t{display:none}}
+@media (max-width:820px){
+  body{font-size:14.5px}
+  .demo-bar{font-size:10.5px;padding:5px 10px}
+  .hd{top:42px;padding:16px 18px}.hd.on{padding:10px 18px}
+  .logo{font-size:22px}.logo small{font-size:7.5px}
+  .nav .btn{padding:9px 16px;font-size:12px}
+  .hero{height:100svh;min-height:640px}
+  .sl.s1{background-position:72% center}
+  .vcopy{right:22px;top:118px;gap:16px}
+  .vcopy h1{font-size:34px;letter-spacing:.2em}
+  .vcopy p{font-size:12px;padding-right:10px}
+  .prog{display:none}
+  .en-big{left:20px;bottom:150px}
+  .en-big small{font-size:15px}
+  .en-big b{font-size:24vw}
+  .hero-side{left:20px;right:20px;bottom:56px}
+  .offer-chip{padding:10px 16px}.offer-chip b{font-size:24px}
+  .hero-side .btn{flex:1;padding:14px 8px;font-size:13px;gap:8px;white-space:nowrap}
+  .vcopy p{display:none}
+  .scroll{display:none}
+  .sec{padding:90px 22px}
+  .head{margin-bottom:44px}
+  .concept,.staff,.access{grid-template-columns:1fr;gap:46px}
+  .concept .ph{height:460px}
+  .concept .vt{font-size:15px}
+  .nums{padding:60px 18px}
+  .nums ul{grid-template-columns:1fr 1fr;gap:34px 0}
+  .nums li:nth-child(3){border-left:0}
+  .wlist{grid-template-columns:1fr}
+  .wlist li{font-size:14.5px;padding:18px 0 18px 42px}
+  .mitem{grid-template-columns:1fr;gap:26px;margin-bottom:70px}
+  .mitem:nth-child(even) .ph{order:0}
+  .offer{padding:80px 22px;min-height:auto;justify-content:flex-start}
+  .offer:before{background:rgba(40,26,22,.55)}
+  .oprice b{font-size:58px}
+  .rlist,.vlist{grid-template-columns:1fr}
+  .rlist li:nth-child(2){margin-top:0}
+  .rlist .ph{aspect-ratio:4/3}
+  .flist{grid-template-columns:1fr 1fr}
+  .flist li{padding:28px 16px 18px;border-bottom:1px solid var(--line)}
+  .flist li:nth-child(3){border-left:1px solid var(--line)}
+  .flist .no{font-size:42px}
+  .reserve{padding:100px 22px}
+  .ract .btn{width:100%;min-width:0}
+  footer{padding-bottom:110px}
+  .spbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:rgba(248,244,239,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 -1px 0 var(--line);transform:translateY(110%);transition:transform .4s}
+  .spbar.on{transform:none}
+  .spbar .btn{padding:14px 6px;font-size:13.5px}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>制作デモサイト</b>｜サロン名・住所・電話番号・料金・お客様の声はすべて架空のサンプルです。</div>
+
+<header class="hd" id="hd">
+  <a class="logo" href="#top">LUMIÈRE<small>PRIVATE BEAUTY SALON</small></a>
+  <nav class="nav">
+    <a class="t" href="#concept">CONCEPT</a>
+    <a class="t" href="#menu">MENU</a>
+    <a class="t" href="#voice">VOICE</a>
+    <a class="t" href="#access">SALON</a>
+    <a class="btn" href="#reserve">ご予約</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="sl s1 on" style="background-image:url(../assets/body.jpg)"></div>
+  <div class="sl" style="background-image:url(../assets/hero.jpg);background-position:60% center"></div>
+  <div class="sl" style="background-image:url(../assets/room.jpg);background-position:60% center"></div>
+
+  <div class="vcopy">
+    <h1><span class="ln"><span>ほどけていく、</span></span><span class="ln"><span>わたしの時間</span></span></h1>
+    <p>完全予約制　プライベートサロン</p>
+  </div>
+
+  <div class="en-big">
+    <small>Private Beauty Salon</small>
+    <b id="unw">Unwind.</b>
+  </div>
+
+  <div class="hero-side">
+    <div class="offer-chip"><small>初回限定 フェイシャル60分</small><b>¥5,500<em>税込</em></b></div>
+    <a class="btn btn-glass" href="#reserve">ご予約はこちら<span class="ar">→</span></a>
+  </div>
+
+  <div class="prog"><span id="cur">01</span><span class="bar"><i id="pg"></i></span><span>03</span></div>
+  <div class="scroll"><span>SCROLL</span><i></i></div>
+</section>
+
+<section class="sec" id="concept">
+  <div class="concept">
+    <div class="ph">
+      <div class="p1 mask rv"><img src="../assets/face.jpg" alt="フェイシャルトリートメントの様子"></div>
+      <div class="p2 mask rv d2"><img src="../assets/flowers.jpg" alt=""></div>
+      <p class="vt rv d3">ていねいに、ととのえる。</p>
+    </div>
+    <div>
+      <div class="head rv"><span class="en">Concept</span><span class="ja">コンセプト</span></div>
+      <h2 class="jp rv">がんばるあなたが、<br>ほっとできる場所に。</h2>
+      <p class="t rv d1">仕事に、家族に、毎日いろいろなことをがんばっている女性ほど、自分のことはあと回しになりがちです。</p>
+      <p class="t rv d2">LUMIÈREは、1日数名さまだけをお迎えする完全予約制のサロンです。カウンセリングでお肌と生活のリズムをうかがってから、その日のあなたに合わせたトリートメントをご提案します。他のお客様と顔を合わせることのない個室で、どうぞ肩の力を抜いてお過ごしください。</p>
+    </div>
+  </div>
+</section>
+
+<section class="nums">
+  <ul>
+    <li class="rv"><b><span class="cu" data-to="98">0</span><sup>%</sup></b><small>お客様満足度</small></li>
+    <li class="rv d1"><b><span class="cu" data-to="92">0</span><sup>%</sup></b><small>リピート率</small></li>
+    <li class="rv d2"><b><span class="cu" data-to="3200" data-comma>0</span><sup>名</sup></b><small>ご来店実績</small></li>
+    <li class="rv d3"><b><span class="cu" data-to="15">0</span><sup>年</sup></b><small>オーナーの施術歴</small></li>
+  </ul>
+</section>
+
+<section class="sec worry">
+  <div class="head c rv"><span class="en">Worries</span><span class="ja">こんなお悩みはありませんか</span></div>
+  <ul class="wlist">
+    <li class="rv">夕方になると、顔がどんよりくすんで見える</li>
+    <li class="rv d1">ファンデーションのノリが、前より悪くなった</li>
+    <li class="rv">鏡を見るたびに、疲れた顔の自分にがっかりする</li>
+    <li class="rv d1">肩や首がガチガチで、ぐっすり眠れない</li>
+    <li class="rv">サロンの勧誘が苦手で、足が遠のいていた</li>
+    <li class="rv d1">自分のためだけの時間が、ほとんどない</li>
+  </ul>
+  <div class="answer rv"><h2 class="jp">そのお悩み、<br>LUMIÈREにお任せください。</h2></div>
+</section>
+
+<section class="sec" id="menu">
+  <div class="head c rv"><span class="en">Menu</span><span class="ja">メニュー・料金</span></div>
+  <div class="menu">
+    <article class="mitem">
+      <div class="ph mask rv"><img src="../assets/hero.jpg" alt="フェイシャルトリートメント"></div>
+      <div class="rv d1">
+        <span class="no">Facial Treatment</span>
+        <h3>フェイシャル<span class="tag">いちばん人気</span></h3>
+        <p>クレンジングから美容液の導入、デコルテのマッサージまで。くすみをはらって、内側から明るい透明感のある素肌へ導きます。</p>
+        <div class="prices"><div><span>60分</span><b>¥8,000<small>税込</small></b></div><div><span>90分（パック・ヘッド付き）</span><b>¥11,000<small>税込</small></b></div></div>
+      </div>
+    </article>
+    <article class="mitem">
+      <div class="ph mask rv"><img src="../assets/aroma.jpg" alt="アロマボディケア"></div>
+      <div class="rv d1">
+        <span class="no">Aroma Body Care</span>
+        <h3>アロマボディケア</h3>
+        <p>その日の気分で選べる香りのオイルで、背中から脚までをゆっくりほぐします。むくみや冷え、肩こりが気になる方に。</p>
+        <div class="prices"><div><span>60分</span><b>¥9,000<small>税込</small></b></div><div><span>90分</span><b>¥12,000<small>税込</small></b></div></div>
+      </div>
+    </article>
+    <article class="mitem">
+      <div class="ph mask rv"><img src="../assets/facial2.jpg" alt="スペシャルコース"></div>
+      <div class="rv d1">
+        <span class="no">Special Course</span>
+        <h3>フェイシャル＋ボディ</h3>
+        <p>顔と体をまとめてととのえる、ごほうびのフルコース。大切な予定の前や、自分をいたわりたい日におすすめです。</p>
+        <div class="prices"><div><span>120分</span><b>¥16,500<small>税込</small></b></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="bg" id="obg"></div>
+  <div class="ocard rv">
+    <p class="en">First Visit</p>
+    <h2>はじめての方限定<br>フェイシャル60分</h2>
+    <div class="oprice"><s>通常 ¥8,000</s><b>¥5,500<small>税込</small></b></div>
+    <p>カウンセリングとアフターティー付き。当日の勧誘はいたしませんので、安心してお試しください。</p>
+    <a class="btn btn-glass" href="#reserve">初回限定で予約する<span class="ar">→</span></a>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="head c rv"><span class="en">Reasons</span><span class="ja">選ばれている理由</span></div>
+  <ul class="rlist">
+    <li><div class="ph mask rv"><img src="../assets/counsel.jpg" alt=""></div><div class="rv d1"><span class="no">Reason 1</span><h3>じっくり聞く<br>カウンセリング</h3><p>お肌の状態だけでなく、睡眠や食事、お仕事のリズムまでうかがってから、施術の内容を決めていきます。</p></div></li>
+    <li><div class="ph mask rv"><img src="../assets/room.jpg" alt=""></div><div class="rv d1"><span class="no">Reason 2</span><h3>誰にも会わない<br>プライベート空間</h3><p>1日数名さまだけの完全予約制。他のお客様と顔を合わせることなく、ゆっくりお過ごしいただけます。</p></div></li>
+    <li><div class="ph mask rv"><img src="../assets/smile.jpg" alt=""></div><div class="rv d1"><span class="no">Reason 3</span><h3>無理なおすすめは<br>いたしません</h3><p>回数券や化粧品のご購入は必要ありません。ご自宅で続けられる簡単なケアをお伝えしています。</p></div></li>
+  </ul>
+</section>
+
+<section class="sec voice" id="voice">
+  <div class="head c rv"><span class="en">Voice</span><span class="ja">お客様の声</span></div>
+  <ul class="vlist">
+    <li class="rv"><span class="stars">★★★★★</span><h3>翌朝のメイクのノリが、まったく違いました</h3><p>くすみが気になって初めて伺いました。終わったあと鏡を見て、思わず声が出たくらい明るくなっていて驚きました。</p><p class="who">40代・会社員　M様</p></li>
+    <li class="rv d1"><span class="stars">★★★★★</span><h3>勧誘がないので、心からリラックスできます</h3><p>以前のサロンは毎回回数券をすすめられて疲れていました。ここは本当に一度もなくて、今では月1回のごほうびです。</p><p class="who">50代・主婦　K様</p></li>
+    <li class="rv d2"><span class="stars">★★★★★</span><h3>話を聞いてもらえるだけで、気持ちが軽く</h3><p>カウンセリングで生活のことまで聞いてくださるのがうれしいです。帰り道の足取りがいつも軽くなります。</p><p class="who">30代・看護師　Y様</p></li>
+  </ul>
+</section>
+
+<section class="sec">
+  <div class="staff">
+    <div class="ph mask rv"><img src="../assets/staff.jpg" alt="オーナーエステティシャン"></div>
+    <div>
+      <div class="head rv"><span class="en">Message</span><span class="ja">オーナーからのごあいさつ</span></div>
+      <h2 class="jp rv">あなたが、あなたを<br>好きになれるように。</h2>
+      <p class="t rv d1">エステティシャンとして15年、たくさんのお客様のお肌に触れてきました。その中でいつも感じるのは、お肌がととのうと、表情も気持ちも、ふっと明るくなるということです。</p>
+      <p class="t rv d2">がんばりすぎている毎日の中で、ここが少しだけ肩の力を抜ける場所になれたらうれしいです。はじめての方も、どうぞ気軽にお越しください。</p>
+      <p class="sign rv d3">Mio Sakuraba<small>オーナーエステティシャン　桜庭 美緒</small></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec flow">
+  <div class="head c rv"><span class="en">Flow</span><span class="ja">ご来店の流れ</span></div>
+  <ol class="flist">
+    <li class="rv"><span class="no">01</span><h3>ご予約</h3><p>WEB・LINE・お電話から、ご都合のよい日時をお選びください。</p></li>
+    <li class="rv d1"><span class="no">02</span><h3>カウンセリング</h3><p>お肌のお悩みや、その日の体調をゆっくりうかがいます。</p></li>
+    <li class="rv d2"><span class="no">03</span><h3>トリートメント</h3><p>完全個室で、あなたに合わせた施術をお受けいただきます。</p></li>
+    <li class="rv d3"><span class="no">04</span><h3>アフターティー</h3><p>ハーブティーとともに、おうちでのケアをお伝えします。</p></li>
+  </ol>
+</section>
+
+<section class="sec" id="access">
+  <div class="head c rv"><span class="en">Salon</span><span class="ja">サロン情報</span></div>
+  <div class="access">
+    <div class="ph mask rv"><img src="../assets/front.jpg" alt="サロンの外観"></div>
+    <table class="info rv d1">
+      <tr><th>サロン名</th><td>LUMIÈRE（ルミエール）</td></tr>
+      <tr><th>住所</th><td>〒000-0000 〇〇県〇〇市〇〇町0-0-0 〇〇ビル2F</td></tr>
+      <tr><th>アクセス</th><td>〇〇駅 南口より徒歩3分</td></tr>
+      <tr><th>営業時間</th><td>10:00〜19:00（最終受付 17:30）</td></tr>
+      <tr><th>定休日</th><td>不定休</td></tr>
+      <tr><th>お支払い</th><td>現金・各種クレジットカード・電子マネー</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="reserve" id="reserve">
+  <div class="bg"></div>
+  <p class="en rv">Reservation</p>
+  <h2 class="rv d1">ご予約・ご相談はこちらから</h2>
+  <p class="rv d1">24時間受付のWEB予約・LINEが便利です。</p>
+  <div class="ract rv d2">
+    <a class="btn btn-glass" href="#reserve">WEBで予約する<span class="ar">→</span></a>
+    <a class="btn btn-line" href="#reserve">LINEで予約・相談<span class="ar">→</span></a>
+  </div>
+  <a class="rtel rv d3" href="tel:0000000000">00-0000-0000<small>受付 10:00〜19:00／施術中は出られないことがあります</small></a>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="#top">LUMIÈRE<small>PRIVATE BEAUTY SALON</small></a>
+  <p>© LUMIÈRE（デモサイト）</p>
+  <p>Website produced by <a href="https://umemura-raisecolor.github.io/raisecolor/">RAISECOLOR</a>｜掲載内容はすべて架空のサンプルです</p>
+</footer>
+
+<div class="spbar" id="spbar">
+  <a class="btn btn-line" href="#reserve">LINEで予約</a>
+  <a class="btn btn-dark" href="#reserve">初回¥5,500で予約</a>
+</div>
+
+<script>
+// letters
+(function(){const el=document.getElementById('unw'),t=el.textContent;el.textContent='';[...t].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.animationDelay=(.6+i*.1)+'s';el.appendChild(s)})})();
+// slideshow
+(function(){const sl=[...document.querySelectorAll('.hero .sl')],cur=document.getElementById('cur'),pg=document.getElementById('pg');let i=0;
+  const run=()=>{pg.classList.remove('run');void pg.offsetWidth;pg.classList.add('run')};run();
+  setInterval(()=>{sl[i].classList.remove('on');i=(i+1)%sl.length;sl[i].classList.add('on');cur.textContent='0'+(i+1);run()},6000)})();
+// count up
+function countUp(el){const to=+el.dataset.to,comma=el.hasAttribute('data-comma'),d=2200,s=performance.now();
+  (function f(n){const p=Math.min((n-s)/d,1),v=Math.round(to*(1-Math.pow(1-p,4)));el.textContent=comma?v.toLocaleString():v;if(p<1)requestAnimationFrame(f)})(s)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.cu').forEach(countUp);io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// header, sp bar, parallax
+const hd=document.getElementById('hd'),sp=document.getElementById('spbar'),obg=document.getElementById('obg');
+addEventListener('scroll',()=>{hd.classList.toggle('on',scrollY>60);sp.classList.toggle('on',scrollY>innerHeight*.6);
+  const r=obg.parentElement.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)obg.style.transform='translateY('+(r.top*-.1)+'px)'},{passive:true});
+</script>
+</body>
+</html>
