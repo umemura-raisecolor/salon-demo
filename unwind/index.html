@@ -118,11 +118,19 @@ h2.jp{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,38px);
 /* worries */
 .worry{background:var(--greige)}
 .wlist{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0 60px}
-.wlist li{padding:24px 0 24px 46px;border-bottom:1px solid var(--line);position:relative;font-size:18px;color:var(--ink)}
-.wlist li:before{content:"";position:absolute;left:0;top:50%;width:26px;height:26px;margin-top:-13px;border:1px solid var(--rose);border-radius:50%}
-.wlist li:after{content:"";position:absolute;left:9px;top:50%;width:8px;height:13px;margin-top:-9px;border-right:1.5px solid var(--rose);border-bottom:1.5px solid var(--rose);transform:rotate(45deg)}
+.wlist li{padding:24px 0 24px 46px;position:relative;font-size:18px;color:var(--ink);--dl:0s;
+  background:linear-gradient(var(--rose),var(--rose)) left bottom/0% 1px no-repeat,linear-gradient(var(--line),var(--line)) left bottom/100% 1px no-repeat;
+  transition:opacity 1.8s ease-out var(--dl),transform 1.8s ease-out var(--dl),background-size 2.4s ease-in-out calc(var(--dl) + .4s)}
+.wlist li.in{background-size:100% 1px,100% 1px}
+.wlist li:before{content:"";position:absolute;left:0;top:50%;width:26px;height:26px;margin-top:-13px;border:1px solid var(--rose);border-radius:50%;transform:scale(0);transition:transform 1.2s cubic-bezier(.3,1.5,.5,1) calc(var(--dl) + .5s),background-color 1s ease calc(var(--dl) + 1.4s)}
+.wlist li.in:before{transform:scale(1);background-color:rgba(185,130,117,.12)}
+.wlist li:after{content:"";position:absolute;left:9px;top:50%;width:8px;height:13px;margin-top:-9px;border-right:1.5px solid var(--rose);border-bottom:1.5px solid var(--rose);transform:rotate(45deg) scale(.2);opacity:0;transition:opacity .8s ease calc(var(--dl) + 1.2s),transform 1s cubic-bezier(.3,1.6,.5,1) calc(var(--dl) + 1.2s)}
+.wlist li.in:after{opacity:1;transform:rotate(45deg) scale(1)}
 .answer{text-align:center;margin-top:70px}
-.answer:before{content:"";display:block;width:1px;height:70px;background:var(--rose);margin:0 auto 30px}
+.answer:before{content:"";display:block;width:1px;height:70px;background:var(--rose);margin:0 auto 30px;transform:scaleY(0);transform-origin:top;transition:transform 1.8s ease-in-out .3s}
+.answer.in:before{transform:scaleY(1)}
+.split .c{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(6px)}
+.rv.in .split .c,.rv.in.split .c{animation:melt 2.4s ease-out forwards}
 
 /* menu */
 .menu{max-width:1240px;margin:0 auto}
@@ -317,7 +325,7 @@ footer a{color:#dcc39a}
       <p class="vt rv d3">ていねいに、ととのえる。</p>
     </div>
     <div>
-      <div class="head rv"><span class="en">Concept</span><span class="ja">コンセプト</span></div>
+      <div class="head rv"><span class="en split" data-base=".1" data-step=".09">Concept</span><span class="ja">コンセプト</span></div>
       <h2 class="jp rv">がんばるあなたが、<br>ほっとできる場所に。</h2>
       <p class="t rv d1">仕事に、家族に、毎日いろいろなことをがんばっている女性ほど、自分のことはあと回しになりがちです。</p>
       <p class="t rv d2">LUMIÈREは、1日数名さまだけをお迎えする完全予約制のサロンです。カウンセリングでお肌と生活のリズムをうかがってから、その日のあなたに合わせたトリートメントをご提案します。他のお客様と顔を合わせることのない個室で、どうぞ肩の力を抜いてお過ごしください。</p>
@@ -335,20 +343,20 @@ footer a{color:#dcc39a}
 </section>
 
 <section class="sec worry">
-  <div class="head c rv"><span class="en">Worries</span><span class="ja">こんなお悩みはありませんか</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Worries</span><span class="ja">こんなお悩みはありませんか</span></div>
   <ul class="wlist">
     <li class="rv">夕方になると、顔がどんよりくすんで見える</li>
-    <li class="rv d1">ファンデーションのノリが、前より悪くなった</li>
+    <li class="rv">ファンデーションのノリが、前より悪くなった</li>
     <li class="rv">鏡を見るたびに、疲れた顔の自分にがっかりする</li>
-    <li class="rv d1">肩や首がガチガチで、ぐっすり眠れない</li>
+    <li class="rv">肩や首がガチガチで、ぐっすり眠れない</li>
     <li class="rv">サロンの勧誘が苦手で、足が遠のいていた</li>
-    <li class="rv d1">自分のためだけの時間が、ほとんどない</li>
+    <li class="rv">自分のためだけの時間が、ほとんどない</li>
   </ul>
-  <div class="answer rv"><h2 class="jp">そのお悩み、<br>LUMIÈREにお任せください。</h2></div>
+  <div class="answer rv"><h2 class="jp split" data-base="1.6" data-step=".14">そのお悩み、<br>LUMIÈREにお任せください。</h2></div>
 </section>
 
 <section class="sec" id="menu">
-  <div class="head c rv"><span class="en">Menu</span><span class="ja">メニュー・料金</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Menu</span><span class="ja">メニュー・料金</span></div>
   <div class="menu">
     <article class="mitem">
       <div class="ph mask rv"><img src="../assets/hero.jpg" alt="フェイシャルトリートメント"></div>
@@ -392,7 +400,7 @@ footer a{color:#dcc39a}
 </section>
 
 <section class="sec">
-  <div class="head c rv"><span class="en">Reasons</span><span class="ja">選ばれている理由</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Reasons</span><span class="ja">選ばれている理由</span></div>
   <ul class="rlist">
     <li><div class="ph mask rv"><img src="../assets/counsel.jpg" alt=""></div><div class="rv d1"><span class="no">Reason 1</span><h3>じっくり聞く<br>カウンセリング</h3><p>お肌の状態だけでなく、睡眠や食事、お仕事のリズムまでうかがってから、施術の内容を決めていきます。</p></div></li>
     <li><div class="ph mask rv"><img src="../assets/room.jpg" alt=""></div><div class="rv d1"><span class="no">Reason 2</span><h3>誰にも会わない<br>プライベート空間</h3><p>1日数名さまだけの完全予約制。他のお客様と顔を合わせることなく、ゆっくりお過ごしいただけます。</p></div></li>
@@ -401,7 +409,7 @@ footer a{color:#dcc39a}
 </section>
 
 <section class="sec voice" id="voice">
-  <div class="head c rv"><span class="en">Voice</span><span class="ja">お客様の声</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Voice</span><span class="ja">お客様の声</span></div>
   <ul class="vlist">
     <li class="rv"><span class="stars">★★★★★</span><h3>翌朝のメイクのノリが、まったく違いました</h3><p>くすみが気になって初めて伺いました。終わったあと鏡を見て、思わず声が出たくらい明るくなっていて驚きました。</p><p class="who">40代・会社員　M様</p></li>
     <li class="rv d1"><span class="stars">★★★★★</span><h3>勧誘がないので、心からリラックスできます</h3><p>以前のサロンは毎回回数券をすすめられて疲れていました。ここは本当に一度もなくて、今では月1回のごほうびです。</p><p class="who">50代・主婦　K様</p></li>
@@ -413,7 +421,7 @@ footer a{color:#dcc39a}
   <div class="staff">
     <div class="ph mask rv"><img src="../assets/staff.jpg" alt="オーナーエステティシャン"></div>
     <div>
-      <div class="head rv"><span class="en">Message</span><span class="ja">オーナーからのごあいさつ</span></div>
+      <div class="head rv"><span class="en split" data-base=".1" data-step=".09">Message</span><span class="ja">オーナーからのごあいさつ</span></div>
       <h2 class="jp rv">あなたが、あなたを<br>好きになれるように。</h2>
       <p class="t rv d1">エステティシャンとして15年、たくさんのお客様のお肌に触れてきました。その中でいつも感じるのは、お肌がととのうと、表情も気持ちも、ふっと明るくなるということです。</p>
       <p class="t rv d2">がんばりすぎている毎日の中で、ここが少しだけ肩の力を抜ける場所になれたらうれしいです。はじめての方も、どうぞ気軽にお越しください。</p>
@@ -423,7 +431,7 @@ footer a{color:#dcc39a}
 </section>
 
 <section class="sec flow">
-  <div class="head c rv"><span class="en">Flow</span><span class="ja">ご来店の流れ</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Flow</span><span class="ja">ご来店の流れ</span></div>
   <ol class="flist">
     <li class="rv"><span class="no">01</span><h3>ご予約</h3><p>WEB・LINE・お電話から、ご都合のよい日時をお選びください。</p></li>
     <li class="rv d1"><span class="no">02</span><h3>カウンセリング</h3><p>お肌のお悩みや、その日の体調をゆっくりうかがいます。</p></li>
@@ -433,7 +441,7 @@ footer a{color:#dcc39a}
 </section>
 
 <section class="sec" id="access">
-  <div class="head c rv"><span class="en">Salon</span><span class="ja">サロン情報</span></div>
+  <div class="head c rv"><span class="en split" data-base=".1" data-step=".09">Salon</span><span class="ja">サロン情報</span></div>
   <div class="access">
     <div class="ph mask rv"><img src="../assets/front.jpg" alt="サロンの外観"></div>
     <table class="info rv d1">
@@ -474,6 +482,11 @@ footer a{color:#dcc39a}
 <script>
 // letters
 (function(){const el=document.getElementById('unw'),t=el.textContent;el.textContent='';[...t].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.animationDelay=(4.4+i*.22)+'s';el.appendChild(s)})})();
+// split text into chars (keeps <br>)
+document.querySelectorAll('.split').forEach(el=>{let k=0;const b=+el.dataset.base||0,st=+el.dataset.step||.1;
+  [...el.childNodes].forEach(n=>{if(n.nodeType!==3)return;const f=document.createDocumentFragment();
+    [...n.textContent].forEach(c=>{const s=document.createElement('span');s.className='c';s.textContent=c;s.style.animationDelay=(b+k*st)+'s';k++;f.appendChild(s)});n.replaceWith(f)})});
+document.querySelectorAll('.wlist li').forEach((li,i)=>li.style.setProperty('--dl',(i*.35)+'s'));
 // headline: one char at a time, slowly
 (function(){let k=0;document.querySelectorAll('#vh .ln').forEach(l=>{const t=l.textContent;l.textContent='';[...t].forEach(c=>{const s=document.createElement('span');s.className='c';s.textContent=c;s.style.animationDelay=(.4+k*.28)+'s';k++;l.appendChild(s)})})})();
 // slideshow
