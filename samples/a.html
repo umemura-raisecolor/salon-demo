@@ -1,0 +1,28 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Shippori+Mincho:wght@500;600&family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{overflow:hidden;font-family:"Zen Kaku Gothic New",sans-serif}a{color:inherit;text-decoration:none}
+.btn{position:relative;overflow:hidden;display:inline-block;padding:16px 34px;border-radius:999px;font-weight:700;letter-spacing:.08em}
+.btn:before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-22deg);animation:sh 3.5s infinite}
+@keyframes sh{0%,50%{left:-60%}80%,100%{left:130%}}
+
+body{background:#fff6f1;color:#4a3530}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:24px 5vw;font-family:"Zen Maru Gothic"}
+.logo{font-family:"Playfair Display";font-size:30px;color:#e07a68}.nav{display:flex;gap:28px;font-size:14px;align-items:center}
+.nav .btn{background:#e07a68;color:#fff;padding:11px 24px}
+.wrap{position:relative;height:calc(100vh - 86px)}
+.big{position:absolute;left:5vw;top:2vh;font-family:"Playfair Display";font-style:italic;font-size:15vw;line-height:.85;color:#f9d6cb;z-index:0}
+.c{position:absolute;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -30px rgba(160,80,60,.5)}
+.c img{width:100%;height:100%;object-fit:cover}
+.c1{width:40vw;height:40vw;max-width:560px;max-height:560px;right:8vw;top:2vh}.c2{width:15vw;height:15vw;right:44vw;bottom:6vh;border-color:#ffd9a8}.c3{width:11vw;height:11vw;right:3vw;bottom:8vh}
+.dot{position:absolute;border-radius:50%}.d1{width:90px;height:90px;background:#ffd36e;right:42vw;top:6vh}.d2{width:40px;height:40px;background:#9fd8c8;right:6vw;top:4vh}
+.tx{position:absolute;left:5vw;bottom:10vh;z-index:2;font-family:"Zen Maru Gothic"}
+.tx p{display:inline-block;background:#fff;padding:6px 16px;border-radius:999px;color:#e07a68;font-weight:700;margin-bottom:18px}
+.tx h1{font-size:54px;line-height:1.45;letter-spacing:.06em}.tx h1 span{background:linear-gradient(transparent 62%,#ffd36e 62%)}
+.tx .btn{margin-top:28px;background:#e07a68;color:#fff;box-shadow:0 14px 26px -12px #e07a68}
+.pr{position:absolute;right:32vw;top:34vh;width:150px;height:150px;border-radius:50%;background:#4a3530;color:#fff;display:grid;place-content:center;text-align:center;font-family:"Zen Maru Gothic";transform:rotate(-10deg);z-index:3}
+.pr b{font-family:"Playfair Display";font-size:34px;line-height:1}.pr small{font-size:12px}
+</style></head><body><div class="hd"><span class="logo">Lumière</span><nav class="nav"><span>メニュー</span><span>初めての方へ</span><span>アクセス</span><a class="btn">WEB予約</a></nav></div>
+<div class="wrap"><div class="big">Hello,<br>Beauty!</div><div class="dot d1"></div><div class="dot d2"></div>
+<div class="c c1"><img src="../assets/face.jpg"></div><div class="c c2"><img src="../assets/smile.jpg"></div><div class="c c3"><img src="../assets/towels.jpg"></div>
+<div class="pr"><small>初回限定</small><b>¥5,500</b><small>フェイシャル60分</small></div>
+<div class="tx"><p>完全予約制のおうちサロン</p><h1>がんばる毎日に、<br><span>ごほうび</span>の60分を。</h1><a class="btn">初回限定で予約する →</a></div></div></body></html>
